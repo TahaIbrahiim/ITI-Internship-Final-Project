@@ -1,0 +1,38 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form asp-controller="Instructor" asp-action="Edit" method="post">
+    <input asp-for="Id" hidden />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Salary" class="form-label"></label>
+        <input class="form-control" asp-for="Salary">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input class="form-control" asp-for="Age">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input class="form-control" asp-for="Email">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label"></label>
+        <input class="form-control" asp-for="Password">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Dept_Id" class="form-label"></label>
+        <select class="form-select" asp-for="Dept_Id" asp-items="@ViewBag.depts">
+            <option selected>Open this select menu</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+

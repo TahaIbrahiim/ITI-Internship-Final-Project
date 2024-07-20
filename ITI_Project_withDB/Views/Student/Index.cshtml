@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    int index = 1;
+    Layout = "_Layout";
+}
+
+<h1>Index</h1>
+
+<hr />
+<a href="/student/NewForm">Add New Student</a>
+<hr />
+<table>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Image</th>
+        <th>Controls</th>
+    </tr>
+    @foreach (Student std in Model)
+    {
+        <tr>
+            <td>@(index++)</td>
+            <td>@std.Name</td>
+            <td>@std.Email</td>
+            <td><img src="/images/@std.Img" alt="student image" width="100px"/></td>
+            <td> 
+                <a href="/Student/Details/@std.Id">Details</a> |
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,19 @@
+﻿@model StudentCourseVM
+@{
+    ViewData["Title"] = "GetStudentCourses";
+}
+
+<h1>Get Student Courses</h1>
+
+<div class="card" >
+    <div class="card-header">
+        @Model.Std_Name
+    </div>
+    <ul class="list-group list-group-flush">
+        @foreach(var item in Model.Courses)
+        {
+        <li class="list-group-item">Course @item.Crs_Name : grade @item.Grade</li>
+        } 
+    </ul>
+</div>
+

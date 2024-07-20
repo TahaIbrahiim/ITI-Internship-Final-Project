@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<h1>Transfer Data</h1>
+
+<p>We are making an example to transfer data from Controller to view</p>
+
+
+<a asp-controller="TransferData" asp-action="SetViewData" asp-route-name="ali" asp-route-age="20" class="btn btn-primary">Using View Data</a>
+
+<a asp-controller="TransferData" asp-action="SetViewBag" asp-route-name="Mona" asp-route-age="30" class="btn btn-success">Using View Bag</a>
+
+<a asp-controller="TransferData" asp-action="SetModel" asp-route-name="Mona" asp-route-age="30" class="btn btn-warning">Using Model</a>
+
+<a asp-controller="TransferData" asp-action="SetViewModel" asp-route-name="Mona" asp-route-age="30" class="btn btn-warning">Using View Model</a>
+

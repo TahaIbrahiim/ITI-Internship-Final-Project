@@ -1,0 +1,12 @@
+﻿@model studentDataVM
+@{
+    ViewData["Title"] = "setViewModel";
+}
+
+<h1>setViewModel</h1>
+
+
+<p>Name: @Model.Name</p>
+<p>Age: @Model.Age</p>
+
+<p>Next year age: @(++Model.Age)</p>

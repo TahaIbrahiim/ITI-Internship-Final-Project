@@ -1,0 +1,22 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Instructor Details</h1>
+
+<div class="card">
+    <div class="card-header">
+       Name: @Model.Name
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Email: @Model.Email</h5>
+        <p class="card-text">Age: @Model.Age</p>
+        <p class="card-text">Salary: @Model.Salary</p>
+        @if (Model.Dept_Id > 0)
+        {
+            <p class="card-text">Department: @Model.Department.Name</p>
+        }
+        <a asp-controller="instructor" asp-action="Index" class="btn btn-primary">Go Back</a>
+    </div>
+</div>

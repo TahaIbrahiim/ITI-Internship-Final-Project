@@ -1,0 +1,35 @@
+﻿@model List<Instructor>
+@{
+    ViewData["Title"] = "Index";
+    int index = 0;
+}
+
+<h1>Instructors</h1>
+<hr />
+<a asp-controller="Instructor" asp-action="Add" class="btn btn-outline-primary"><i class="fa-solid fa-plus fa-2xl"></i>New Instructor</a>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Instructor ins in Model)
+        {
+            <tr>
+            <th scope="row">@(++index)</th>
+            <td>@ins.Name</td>
+            <td>@ins.Email</td>
+            <td>
+                    <a asp-controller="Instructor" asp-action="Details" asp-route-id="@ins.Id"><i class="fa-solid fa-circle-info fa-lg" style="color: #346fd5;"></i></a> <i class="fa-solid fa-grip-lines-vertical"></i>
+                    <a asp-controller="Instructor" asp-action="Edit" asp-route-id="@ins.Id"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #346fd5;"></i></a> <i class="fa-solid fa-grip-lines-vertical"></i>
+                    <a asp-controller="Instructor" asp-action="Delete" asp-route-id="@ins.Id"><i class="fa-solid fa-trash fa-lg" style="color: #346fd5;"></i></a>
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>

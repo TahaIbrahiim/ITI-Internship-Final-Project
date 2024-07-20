@@ -1,0 +1,66 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "EditForm";
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <h1 class="text-primary text-bg-light text-center p-3 rounded-top-circle">Edit Course</h1>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-8">
+            <div class="text-center">
+                <form action="/course/EditInDB">
+                    <input value="@Model.Id" name="Id" hidden />
+                    <div class="mb-3">
+                        <label for="Name" class="form-label"> Name</label>
+                        <input type="text" id="Name" name="Name" class="form-control" value="@Model.Name" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="Description">Description</label>
+                        <input type="text" id="Description" name="Description" class="form-control" value="@Model.Description" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="totalHours" class="form-label">Total Hours</label>
+                        <input type="number" id="totalHours" name="totalHours" class="form-control" value="@Model.totalHours" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="FullMark" class="form-label">Full Mark</label>
+                        <input type="number" id="FullMark" name="FullMark" class="form-control" value="@Model.FullMark" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="PassMark" class="form-label">Pass Mark</label>
+                        <input type="number" id="PassMark" name="PassMark" class="form-control" value="@Model.PassMark" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="instructor" class="form-label">Instructor</label>
+                        <select name="ins_Id" id="instructor" class="form-select">
+                            @foreach (Instructor ins in ViewBag.Ins)
+                            {
+                                @if (ins.Id == Model.ins_Id)
+                                {
+                                    <option value="@ins.Id" selected>@ins.Name</option>
+                                }
+                                else
+                                {
+                                    <option value="@ins.Id">@ins.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div class="m-2 text-center">
+                        <input type="submit" value="Edit" class="btn btn-primary w-75" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col"></div>
+        
+    </div>
+    <div class="row text-center"> <h3>Thank you for using our website</h3></div>
+</div>

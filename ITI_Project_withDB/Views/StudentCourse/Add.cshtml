@@ -1,0 +1,30 @@
+﻿@model StudentCourseAddVM
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add</h1>
+
+
+<form asp-controller="@nameof(StudentCourse)" asp-action="Add" method="post">
+    
+    <div class="mb-3">
+        <label asp-for="Std_id" class="form-label"></label>
+        <select class="form-select" asp-for="Std_id" asp-items="@Model.students">
+            <option selected>Open this select menu</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Crs_id" class="form-label"></label>
+        <select class="form-select" asp-for="Crs_id" asp-items="@Model.courses">
+            <option selected>Open this select menu</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="grade" class="form-label"></label>
+        <input class="form-control" asp-for="grade">
+    </div>
+
+    <input type="submit" value="Add" />
+</form>

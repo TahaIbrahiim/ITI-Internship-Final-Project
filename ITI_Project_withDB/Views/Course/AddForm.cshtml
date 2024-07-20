@@ -1,0 +1,46 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "AddForm";
+}
+
+<h1 class="text-primary text-bg-light text-center p-3">Add New Course</h1>
+<div class="text-center">
+<form action="/course/AddInDB">
+    <div class="mb-3">
+    <label for="Name" class="form-label"> Name</label>
+    <input type="text" id="Name" name="Name" class="form-control"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="Description">Description</label>
+        <input type="text" id="Description" name="Description" class="form-control" />
+    </div>
+
+        <div class="mb-3">
+        <label for="totalHours" class="form-label">Total Hours</label>
+        <input type="number" id="totalHours" name="totalHours" class="form-control" />
+    </div>
+            <div class="mb-3">
+        <label for="FullMark" class="form-label">Full Mark</label>
+        <input type="number" id="FullMark" name="FullMark" class="form-control" />
+    </div>
+                <div class="mb-3">
+        <label for="PassMark" class="form-label">Pass Mark</label>
+        <input type="number" id="PassMark" name="PassMark" class="form-control" />
+    </div>
+                    <div class="mb-3">
+        <label for="instructor" class="form-label">Instructor</label>
+        <select name="ins_Id" id="instructor" class="form-select">
+        @foreach (Instructor ins in ViewBag.Ins)
+        {
+            <option value="@ins.Id">@ins.Name</option>
+        }     
+    </select>
+    </div>
+
+    <div class="m-2 text-center">
+    <input type="submit" value="Add" class="btn btn-primary w-75"/>
+    </div>
+</form>
+
+</div>

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Student Details</h1>
+
+
+<h3>Name</h3>
+<p>@Model.Name</p>
+<h3>Address</h3>
+<p>@Model.Address</p>
+<h3>Age</h3>
+<p>@Model.Age</p>
+<h3>Email</h3>
+<p>@Model.Email</p>
+<h3>Img</h3>
+<p><img src="/images/@Model.Img" /></p>
+
+
+<h5><a href="/student/index">Back to list</a></h5>

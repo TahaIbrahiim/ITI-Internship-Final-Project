@@ -1,0 +1,61 @@
+﻿@model CourseVM
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add</h1>
+
+<form asp-action="Add" asp-controller="Validation" method="post">
+    <div class="mb-2">
+        <label class="form-label" asp-for="Name"></label>
+        <input class="form-control" asp-for="Name"/>
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="mb-2">
+        <label class="form-label" asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div> 
+    <div class="mb-2">
+        <label class="form-label" asp-for="FullMark"></label>
+        <input class="form-control" asp-for="FullMark" />
+        <span class="text-danger" asp-validation-for="FullMark"></span>
+    </div> 
+    <div class="mb-2">
+        <label class="form-label" asp-for="PassMark"></label>
+        <input class="form-control" asp-for="PassMark" />
+        <span class="text-danger" asp-validation-for="PassMark"></span>
+    </div>
+    <div class="mb-2">
+        <label class="form-label" asp-for="totalHours"></label>
+        <input class="form-control" asp-for="totalHours" />
+        <span class="text-danger" asp-validation-for="totalHours"></span>
+    </div>
+
+    <div class="mb-2">
+        <label class="form-label" asp-for="ins_Id"></label>
+        <select class="form-select" asp-for="ins_Id" asp-items="@Model.instructors"></select>
+        <span class="text-danger" asp-validation-for="ins_Id"></span>
+    </div>
+    <div class="mb-2">
+        <label class="form-label" asp-for="Password"></label>
+        <input class="form-control" asp-for="Password" />
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+    <div class="mb-2">
+        <label class="form-label" asp-for="ConfirmPassword"></label>
+        <input class="form-control" asp-for="ConfirmPassword" />
+        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+    </div>
+    <div class="mb-2 text-center">
+        <input type="submit" value="Add" class="btn btn-warning"/>
+    </div>
+</form>
+
+@section Scripts{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+

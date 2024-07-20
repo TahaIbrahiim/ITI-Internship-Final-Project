@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "SetViewBag";
+}
+
+<h1>SetViewBag</h1>
+
+<h3>View Bag</h3>
+
+<p>Name: @ViewBag.nam</p>
+<p>Age: @ViewBag.age</p>
+
+<p>Next Year Age: @(++ViewBag.age)</p>
+
+
+<h3>You can use viewBag to get value have been set with viewData</h3>
+<p>TestData: @ViewBag.testData</p>
+<h3>You can use viewData to get value have been set with viewBag</h3>
+<p>TestBag: @ViewData["testBag"]</p>
+

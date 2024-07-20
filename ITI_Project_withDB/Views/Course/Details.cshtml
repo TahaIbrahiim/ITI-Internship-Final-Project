@@ -1,0 +1,26 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div class="card text-center">
+    <div class="card-body">
+<h1>Course Details</h1>
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">@Model.Description</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Total Hours: @Model.totalHours</li>
+        <li class="list-group-item">Full Mark: @Model.FullMark</li>
+        <li class="list-group-item">Pass Mark: @Model.PassMark</li>
+        @if (Model.ins_Id > 0)
+{
+        <li class="list-group-item">Instructor: @Model.Instructor.Name</li>
+}
+    </ul>
+    <div class="card-body">
+        <a href="/course/index" class="card-link btn btn-primary">Back to list</a>
+    </div>
+</div>

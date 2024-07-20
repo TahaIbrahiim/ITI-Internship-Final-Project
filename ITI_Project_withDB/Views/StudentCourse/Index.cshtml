@@ -1,0 +1,33 @@
+﻿@model List<AllStudentCoursesVM>
+@{
+    ViewData["Title"] = "Index";
+    int index = 1;
+}
+
+<h1>Student Courses</h1>
+
+<a class="btn btn-primary" asp-controller="@nameof(StudentCourse)" asp-action="Add">Assign student to course</a>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">student name</th>
+            <th scope="col">course name</th>
+            <th scope="col">grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(AllStudentCoursesVM item in Model)
+        {
+            <tr>
+                <th scope="row">@(index++)</th>
+                <td>@item.Std_Name</td>
+                <td>@item.Crs_Name</td>
+                <td>@item.Grade</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+
